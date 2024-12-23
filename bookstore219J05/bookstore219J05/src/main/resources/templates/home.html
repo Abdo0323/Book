@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Book Management Website</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&family=Ubuntu:wght@400;500&display=swap');
+
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			font-family: 'Arial', sans-serif;
+		}
+
+		a {
+			text-decoration: none;
+		}
+		.nav_content {
+			height: 100%;
+			max-width: 1440px;
+			margin: auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			text-decoration: none;
+		}
+
+		.nav_content .logo a {
+			font-size: 40px;
+			font-weight: 500;
+			color: #ffffff;
+			font-family: 'Arial', sans-serif;
+		}
+
+		.nav_links {
+			display: flex;
+			align-items: center;
+		}
+
+		.nav_links li {
+			list-style: none;
+			margin: 0 8px;
+
+		}
+
+		.nav_links a {
+			font-size: 18px;
+			font-weight: 500;
+			font-family: 'Arial', sans-serif;
+			color: #fff;
+			padding: 10px 15px;
+			transition: all 0.3s ease;
+		}
+
+		.nav_links a:hover {
+			color: #979fa0;
+		}
+		header {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			padding: 20px;
+			background: #000000;
+			z-index: 1000;
+		}
+
+		.nav_content {
+			height: 100%;
+			max-width: 1440px;
+			margin: auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav_content .logo a {
+			font-size: 40px;
+			font-weight: 500;
+			color: #ffffff;
+			font-family: 'Arial', sans-serif;
+		}
+
+		.nav_links {
+			display: flex;
+			align-items: center;
+		}
+
+		.nav_links li {
+			list-style: none;
+			margin: 0 8px;
+
+		}
+
+		.nav_links a {
+			font-size: 18px;
+			font-weight: 500;
+			font-family: "JetBrains Mono Medium";
+			color: #fff;
+			padding: 10px 15px;
+			transition: all 0.3s ease;
+		}
+
+		.nav_links a:hover {
+			color: #979fa0;
+		}
+
+		body {
+			/* Adjusted to accommodate the fixed header */
+			font-family: 'Arial', sans-serif;
+			background: linear-gradient(to right, rgba(2, 3, 35, 0.89), #000000);
+			background-size: cover;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			box-sizing: border-box;
+		}
+		.web-info{
+			font-weight: normal;
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		h1 {
+			color: #ffffff;
+			text-align: center;
+			margin-bottom: 50px;
+			font-size: 4em;
+			font-weight: bold;
+		}
+
+		h2 {
+			color: #ffffff;
+			text-align: center;
+			margin-bottom: 40px;
+			font-size: 1.7em;
+			font-weight: normal;
+			letter-spacing: 1px;
+		}
+
+		@media (max-width: 600px) {
+			h1 {
+				font-size: 2em;
+			}
+
+			p {
+				font-size: 1em;
+			}
+
+			.nav_content .logo a {
+				font-size: 28px;
+			}
+
+			.nav_links a {
+				font-size: 16px;
+			}
+
+			.social-icons {
+				font-size: 1.2em;
+			}
+		}
+	</style>
+</head>
+
+<body>
+<header>
+	<div class="nav_content">
+		<div class="logo">
+			<a href="#">BML</a>
+		</div>
+		<ul class="nav_links">
+			<li><a href="login">Login</a></li>
+			<li><a href="register">Register</a></li>
+		</ul>
+	</div>
+</header>
+<div class="content">
+	<div class="container">
+		<div class="info">
+			<h1>Welcome to Book Manager Library</h1>
+			<h2 class="web-info">Dive into a world of stories and knowledge at our Book Library explore classics, discover new favorites, and feed your curiosity <br>Your literary adventure starts here.</h2>
+		</div>
+	</div>
+</div>
+</body>
+
+</html>

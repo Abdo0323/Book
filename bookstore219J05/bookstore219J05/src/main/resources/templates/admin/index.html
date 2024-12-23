@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin Dashboard</title>
+	<!-- Include Font Awesome CSS (add this line to your head) -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+	<link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.4.min.js">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		  crossorigin="anonymous"/>
+	<style>
+		html {
+			height: 100%;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+			background: linear-gradient(#141e30, #243b55);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 100vh;
+		}
+
+		h1 {
+			color: #fff;
+			text-align: center;
+			margin-bottom: 50px;
+			font-size: 100px;
+		}
+
+		.links-container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			width: 100%;
+			margin-top: 20px;
+		}
+
+		h3 {
+			color: #03e9f4;
+			margin-bottom: 10px;
+			display: flex;
+			align-items: center; /* Center icon vertically */
+		}
+
+		/* Style for Font Awesome icons */
+		.fas {
+			margin-right: 18px; /* Adjust the spacing between icon and text */
+			font-size: 60px;
+		}
+
+		a {
+			text-decoration: none;
+			color: #03e9f4;
+			position: relative;
+			display: inline-block;
+			padding: 10px 0px;
+			font-size: 22px;
+			text-decoration: none;
+			overflow: hidden;
+			transition: .05s;
+			background: none;
+			border: none;
+			letter-spacing: 2px;
+		}
+
+		a:hover {
+			color: white;
+		}
+
+		.register-button {
+			color: #03e9f4;
+			font-size: 16px;
+			text-decoration: none;
+			text-transform: uppercase;
+			overflow: hidden;
+			transition: .05s;
+			letter-spacing: 4px;
+			background: none;
+			border: none;
+			position: relative;
+			display: inline-block;
+			padding: 10px 20px;
+		}
+
+		.register-button:hover {
+			color: white;
+		}
+
+		.register-button span {
+			position: absolute;
+			display: block;
+		}
+
+		.register-button span:nth-child(1) {
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(90deg, transparent, #03e9f4);
+			animation: btn-anim1 1s linear infinite;
+		}
+
+		@keyframes btn-anim1 {
+			0% {
+				left: -100%;
+			}
+
+			50%,
+			100% {
+				left: 100%;
+			}
+		}
+
+		.register-button span:nth-child(2) {
+			top: -100%;
+			right: 0;
+			width: 2px;
+			height: 100%;
+			background: linear-gradient(180deg, transparent, #03e9f4);
+			animation: btn-anim2 1s linear infinite;
+			animation-delay: .25s
+		}
+
+		@keyframes btn-anim2 {
+			0% {
+				top: -100%;
+			}
+
+			50%,
+			100% {
+				top: 100%;
+			}
+		}
+
+		.register-button span:nth-child(3) {
+			bottom: 0;
+			right: -100%;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(270deg, transparent, #03e9f4);
+			animation: btn-anim3 1s linear infinite;
+			animation-delay: .5s
+		}
+
+		@keyframes btn-anim3 {
+			0% {
+				right: -100%;
+			}
+
+			50%,
+			100% {
+				right: 100%;
+			}
+		}
+
+		.register-button span:nth-child(4) {
+			bottom: -100%;
+			left: 0;
+			width: 2px;
+			height: 100%;
+			background: linear-gradient(360deg, transparent, #03e9f4);
+			animation: btn-anim4 1s linear infinite;
+			animation-delay: .75s
+		}
+
+		@keyframes btn-anim4 {
+			0% {
+				bottom: -100%;
+			}
+
+			50%,
+			100% {
+				bottom: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+<h1>Admin Dashboard</h1>
+<div class="links-container">
+	<h3><i class="fas fa-plus"></i> <a href="/showaddbookpage">Add a new book</a></h3>
+	<h3><i class="fas fa-book"></i> <a href="/viewallbooks">View all books</a></h3>
+	<h3><i class="fas fa-home"></i> <a href="/home">Log Out</a></h3>
+</div>
+</body>
+
+</html>

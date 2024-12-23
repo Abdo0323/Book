@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Register Page</title>
+	<style>
+		html {
+			height: 100%;
+		}
+		p{
+			margin: 0px;
+			text-align: center;
+		}
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+			background: linear-gradient(#141e30, #243b55);
+		}
+		header {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			padding: 20px;
+			background: #000000;
+			z-index: 1000;
+		}
+
+		.nav_content {
+			height: 100%;
+			max-width: 1440px;
+			margin: auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			text-decoration: none;
+		}
+
+		.nav_content .logo a {
+			font-size: 40px;
+			font-weight: 500;
+			color: #ffffff;
+			font-family: "JetBrains Mono Medium";
+		}
+
+		.nav_links {
+			display: flex;
+			align-items: center;
+		}
+
+		.nav_links li {
+			list-style: none;
+			margin: 0 8px;
+
+		}
+
+		.nav_links a {
+			font-size: 18px;
+			font-weight: 500;
+			font-family: "JetBrains Mono Medium";
+			color: #fff;
+			padding: 10px 15px;
+			transition: all 0.3s ease;
+		}
+
+		.nav_links a:hover {
+			color: #979fa0;
+		}
+		.login-box {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 400px;
+			padding-top: 40px;
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-bottom: 8px;
+			transform: translate(-50%, -50%);
+			background: rgba(0, 0, 0, .5);
+			box-sizing: border-box;
+			box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+			border-radius: 10px;
+		}
+
+		.login-box h2 {
+			margin: 0 0 30px;
+			padding: 0;
+			color: #fff;
+			text-align: center;
+		}
+
+		.login-box .user-box {
+			position: relative;
+		}
+
+		.login-box .user-box input {
+			width: 100%;
+			padding: 10px 0;
+			font-size: 16px;
+			color: #fff;
+			margin-bottom: 10px;
+			border: none;
+			border-bottom: 1px solid #fff;
+			outline: none;
+			background: transparent;
+		}
+
+		.login-box .user-box label {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 10px 0;
+			font-size: 16px;
+			color: #fff;
+			pointer-events: none;
+			transition: .5s;
+		}
+
+		.login-box .user-box input:focus~label,
+		.login-box .user-box input:valid~label {
+			top: -20px;
+			left: 0;
+			color: #03e9f4;
+			font-size: 12px;
+		}
+		.a-register{
+			position: relative;
+			display: inline-block;
+			padding: 0px 0px;
+			color: #03e9f4;
+			font-size: 16px;
+			text-decoration: none;
+			text-transform: uppercase;
+			overflow: hidden;
+			transition: .5s;
+			margin-top: 20px;
+			letter-spacing: 4px
+		}
+
+
+		.login-box .a-register:hover {
+			background: #03e9f4;
+			color: #fff;
+			box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+		}
+
+		.login-box .a-register span {
+			position: absolute;
+			display: block;
+		}
+
+		.login-box .a-register span:nth-child(1) {
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(90deg, transparent, #03e9f4);
+			animation: btn-anim1 1s linear infinite;
+		}
+
+		@keyframes btn-anim1 {
+			0% {
+				left: -100%;
+			}
+
+			50%,
+			100% {
+				left: 100%;
+			}
+		}
+
+		.login-box .a-register span:nth-child(2) {
+			top: -100%;
+			right: 0;
+			width: 2px;
+			height: 100%;
+			background: linear-gradient(180deg, transparent, #03e9f4);
+			animation: btn-anim2 1s linear infinite;
+			animation-delay: .25s
+		}
+
+		@keyframes btn-anim2 {
+			0% {
+				top: -100%;
+			}
+
+			50%,
+			100% {
+				top: 100%;
+			}
+		}
+		button{
+			border: none;
+			background: none;
+			color: white;
+			outline: none;
+		}
+		.login-box .a-register span:nth-child(3) {
+			bottom: 0;
+			right: -100%;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(270deg, transparent, #03e9f4);
+			animation: btn-anim3 1s linear infinite;
+			animation-delay: .5s
+		}
+
+		@keyframes btn-anim3 {
+			0% {
+				right: -100%;
+			}
+
+			50%,
+			100% {
+				right: 100%;
+			}
+		}
+
+		.login-box .a-register span:nth-child(4) {
+			bottom: -100%;
+			left: 0;
+			width: 2px;
+			height: 100%;
+			background: linear-gradient(360deg, transparent, #03e9f4);
+			animation: btn-anim4 1s linear infinite;
+			animation-delay: .75s
+		}
+
+		@keyframes btn-anim4 {
+			0% {
+				bottom: -100%;
+			}
+
+			50%,
+			100% {
+				bottom: 100%;
+			}
+		}
+		.register-button{
+			position: relative;
+			display: inline-block;
+			padding: 10px 20px;
+			color: #03e9f4;
+			font-size: 16px;
+			text-decoration: none;
+			text-transform: uppercase;
+			overflow: hidden;
+			transition: .05s;
+			letter-spacing: 4px;
+			background: none;
+			border: none;
+		}
+		.register-button:hover{
+			color: white;
+		}
+		.a-login{
+			position: relative;
+			display: inline-block;
+			padding: 10px 0px;
+			color: rgba(189, 189, 189, 0.75);
+			font-size: 14px;
+			text-decoration: none;
+			overflow: hidden;
+			transition: .05s;
+			background: none;
+			border: none;
+			letter-spacing: 2px;
+		}
+		input:-webkit-autofill{
+			background-color: rgb(250, 255, 189) !important;
+			background-image: none !important;
+		}
+		.login-container{
+			margin-top: 20px;
+		}
+		.login-button{
+			color: white;
+			text-decoration: underline;
+		}
+		.logo{
+			text-decoration: none;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script>
+		$(function() {
+			$("#un").blur(function() {
+				$.post('/checkname', { "un": $("#un").val() }, function(result) {
+					if (result.available == "ok") {
+						$("#msg").removeClass("red");
+						$("#msg").html('Username is available');
+						$("#msg").addClass("green");
+					} else {
+						$("#msg").removeClass("green");
+						$("#msg").html('Not available, please choose another one!');
+						$("#msg").addClass("red");
+					}
+				}, 'json');
+			});
+		});
+	</script>
+</head>
+
+<body>
+<header>
+	<div class="nav_content">
+		<div class="logo">
+			<a href="home" class="logo">BML</a>
+		</div>
+	</div>
+</header>
+<div class="login-box">
+	<h2>Login</h2>
+	<form action="deallogin" method="post">
+		<div class="user-box">
+			<input type="text" name="username" required>
+			<label id="un" for="un">Username</label>
+		</div>
+		<div class="user-box">
+			<input type="password" name="password" required>
+			<label for="password">Password</label>
+		</div>
+
+		<span id="msg"></span>
+		<div class="button-container">
+			<a href="" class="a-register">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<input type="submit" class="register-button" value="LOGIN">
+			</a>
+		</div>
+		<p class="login-container">
+			<span class="a-login">Don't Have an account?</span>
+			<a href="register" class="a-login login-button">
+				Register
+			</a>
+		</p>
+
+	</form>
+</div>
+</body>
+
+</html>

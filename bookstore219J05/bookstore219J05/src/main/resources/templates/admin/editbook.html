@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Edit Book</title>
+	<style>
+		body {
+			margin-top: 80px;
+			font-family: 'Arial', sans-serif;
+			background: linear-gradient(to right, rgba(2, 3, 35, 0.89), #000000);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			box-sizing: border-box;
+		}
+
+		h1 {
+			color: #ffffff;
+			text-align: center;
+			margin-bottom: 20px;
+			font-size: 4em;
+			font-weight: bold;
+		}
+
+		form {
+			max-width: 400px;
+			background-color: #141e30;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			color: #fff; /* Add text color for better visibility */
+		}
+
+		p {
+			margin-bottom: 16px;
+		}
+
+		input {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 16px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+
+		input[type="submit"] {
+			background-color: #03e9f4;
+			color: #fff;
+			padding: 10px;
+			cursor: pointer;
+			border: none;
+			border-radius: 4px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #0181c2;
+		}
+	</style>
+</head>
+
+<body>
+<h1>Edit Book</h1>
+<form action="updatebook" method="post">
+	<input type="hidden" name="id" th:value="${book.id}">
+	<p>Book Name: <input type="text" name="bookName" th:value="${book.bookName}" required></p>
+	<p>Author Name: <input type="text" name="authorName" th:value="${book.authorName}" required></p>
+	<p>Book Price: <input type="text" name="bookPrice" th:value="${book.bookPrice}" required></p>
+	<p>Stock Quantity: <input type="text" name="stockQuantity" th:value="${book.stockQuantity}" required></p>
+	<p><input type="submit" value="Update"></p>
+</form>
+</body>
+
+</html>
